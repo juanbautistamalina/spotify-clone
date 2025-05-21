@@ -1,0 +1,180 @@
+/*  Fuente */
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/CircularStd-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/CircularStd-Book.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/CircularStd-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/CircularStd-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "CircularStd";
+  src: url("/fonts/CircularStd-Black.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "CircularStd", system-ui, sans-serif;
+  background: #000;
+  margin: 10px;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: auto 1fr; 
+  grid-template-areas:
+    "menu       main main"
+    "biblioteca main main";
+  height: 100vh;
+  gap: 8px; 
+}
+
+.menu,
+.biblioteca,
+.main {
+  border-radius: 10px;
+  background: #121212;
+}
+
+/* Menú (Inicio y Buscar) */
+.menu {
+  grid-area: menu;
+  padding: 10px 0 10px;
+}
+
+.menu nav ul {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu nav ul li {
+  width: 90%;
+  display: flex;
+  padding: 5px;
+}
+
+.menu nav ul li a {
+  display: flex;
+  gap: 1em;
+  text-decoration: none;
+  color: #b3b3b3;
+  font-weight: bold;
+  align-items: end;
+  transition: .3s ease-in-out;
+}
+
+.menu nav ul li a:hover, .biblioteca a:hover {
+  color: #fff;
+}
+
+/* Biblioteca de Canciones */
+.biblioteca {
+  grid-area: biblioteca;
+  padding: 5px;
+}
+
+.biblioteca a {
+  width: fit-content;
+  padding: 10px 5px 5px 5px;
+  color: #b3b3b3;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: end;
+  gap: 1em;
+  margin: 0 0 0 12px;
+}
+
+.container {
+  margin-top: 10px;
+  /* margin-left: 2px; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 5px;
+}
+
+.card-playlist {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  /* margin: 0 0 10px; */
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: .1s ease-in-out ;
+}
+
+.card-playlist:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+
+}
+
+.card-playlist img {
+  width: 70px;
+  height: 70px;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.card-playlist .info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-playlist .info h3 {
+  font-size: 0.9em;
+  color: #f9f9f9;
+}
+
+.card-playlist .info p {
+  color: #6f6f6f;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.main {
+  grid-area: main;
+  background: #121212;
+}
