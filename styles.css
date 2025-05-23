@@ -54,12 +54,12 @@ html {
 .layout {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-template-rows: auto 1fr; 
+  grid-template-rows: auto 1fr;
   grid-template-areas:
     "menu       main main"
     "biblioteca main main";
-  height: 100vh;
-  gap: 8px; 
+  height: 95vh;
+  gap: 8px;
 }
 
 .menu,
@@ -98,10 +98,11 @@ html {
   color: #b3b3b3;
   font-weight: bold;
   align-items: end;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.menu nav ul li a:hover, .biblioteca a:hover {
+.menu nav ul li a:hover,
+.biblioteca a:hover {
   color: #fff;
 }
 
@@ -142,12 +143,11 @@ html {
   align-items: center;
   border-radius: 5px;
   cursor: pointer;
-  transition: .1s ease-in-out ;
+  transition: 0.1s ease-in-out;
 }
 
 .card-playlist:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .card-playlist img {
@@ -174,7 +174,58 @@ html {
   font-weight: 600;
 }
 
+/* Apartado Main */
 .main {
   grid-area: main;
-  background: #121212;
+  background: linear-gradient(to bottom, #0f3f3a 0%, #121212 60%, #000000 100%);
+}
+
+.main h2 {
+  color: #fff;
+  padding: 30px;
+}
+
+.playlist-container {
+  display: flex;
+  padding: 0 35px;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.playlist-card {
+  width: 150px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 6px 6px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.playlist-card img {
+  width: 100%;
+  height: 130px;
+  border-radius: 5px;
+}
+
+.playlist-card .info {
+  padding: 2px;
+}
+
+.playlist-card h3 {
+  color: #fff;
+  font-size: 0.9em;
+  font-weight: 500;
+}
+
+.playlist-card p {
+  color: #6f6f6f;
+  font-weight: 600;
+  font-size: 0.8em;
+}
+
+
+@media (min-width: 1200px) {
+  .playlist-container {
+    justify-content: flex-start;
+  }
 }
