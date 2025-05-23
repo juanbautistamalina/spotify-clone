@@ -58,7 +58,6 @@ html {
   grid-template-areas:
     "menu       main main"
     "biblioteca main main";
-  height: 95vh;
   gap: 8px;
 }
 
@@ -127,10 +126,9 @@ html {
 
 .container {
   margin-top: 10px;
-  /* margin-left: 2px; */
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 3px;
   padding: 5px;
 }
 
@@ -174,7 +172,7 @@ html {
   font-weight: 600;
 }
 
-/* Apartado Main */
+/* Panel Principal */
 .main {
   grid-area: main;
   background: linear-gradient(to bottom, #0f3f3a 0%, #121212 60%, #000000 100%);
@@ -199,6 +197,31 @@ html {
   padding: 6px 6px 20px;
   border-radius: 5px;
   cursor: pointer;
+  position: relative;
+}
+
+.play-button {
+  display: none;
+  width: 30px;
+  border-radius: 50%;
+  background-color: #1ed760;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+}
+
+.playlist-card:hover {
+  .play-button {
+    display: block;
+    position: absolute;
+    right: 10px;
+    bottom: 70px;
+  }
+}
+
+.play-button:hover {
+  background-color: #1aba4a; /* Verde más oscuro */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4); /* Sombra más intensa */
+  transform: scale(1.05); /* Ligeramente más grande */
 }
 
 .playlist-card img {
@@ -209,6 +232,7 @@ html {
 
 .playlist-card .info {
   padding: 2px;
+  position: relative;
 }
 
 .playlist-card h3 {
@@ -223,6 +247,31 @@ html {
   font-size: 0.8em;
 }
 
+/* Barra de Reproducción (sin utilidad) */
+.reproductor {
+  width: 100%;
+  /* height: 30px; */
+  /* position: absolute; */
+  background: #000;
+  position: fixed;
+  padding: 20px;
+  bottom: 0;
+  color: #fff;
+}
+
+.reproductor-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.reproductor-container > svg {
+  position: relative;
+  color: #000;
+  background: #fff;
+  border-radius: 50%;
+  width: 30px;
+}
 
 @media (min-width: 1200px) {
   .playlist-container {
